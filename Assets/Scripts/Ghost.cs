@@ -1,16 +1,17 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Movement))]
+
 public class Ghost : MonoBehaviour
 {
-    public Movement movement { get; private set; }
-    public GhostHome home { get; private set; }
-    public GhostScatter scatter { get; private set; }
-    public GhostChase chase { get; private set; }
-    public GhostFrightened frightened { get; private set; }
+    public Movement movement;
+    public GhostHome home;
+    public GhostScatter scatter;
+    public GhostChase chase;
+    public GhostFrightened frightened;
     public GhostBehavior initialBehavior;
     public Transform target;
     public int points = 200;
+    public float speedMultiplier;
 
     private void Awake()
     {

@@ -1,9 +1,9 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Ghost))]
+
 public abstract class GhostBehavior : MonoBehaviour
 {
-    public Ghost ghost { get; private set; }
+    public Ghost ghost;
     public float duration;
 
     private void Awake()

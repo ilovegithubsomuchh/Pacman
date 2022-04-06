@@ -6,8 +6,9 @@ public class GhostFrightened : GhostBehavior
     public SpriteRenderer eyes;
     public SpriteRenderer blue;
     public SpriteRenderer white;
+    public Ghost speedMultiplier;
 
-    public bool eaten { get; private set; }
+    public bool eaten;
 
     public override void Enable(float duration)
     {
@@ -56,13 +57,13 @@ public class GhostFrightened : GhostBehavior
     private void OnEnable()
     {
         blue.GetComponent<AnimatedSprite>().Restart();
-        ghost.movement.speedMultiplier = 0.5f;
+        ghost.speedMultiplier = 0.5f;
         eaten = false;
     }
 
     private void OnDisable()
     {
-        ghost.movement.speedMultiplier = 1f;
+        ghost.speedMultiplier = 1f;
         eaten = false;
     }
 
@@ -75,11 +76,10 @@ public class GhostFrightened : GhostBehavior
             Vector2 direction = Vector2.zero;
             float maxDistance = float.MinValue;
 
-            // Find the available direction that moves farthest from pacman
+            
             foreach (Vector2 availableDirection in node.availableDirections)
             {
-                // If the distance in this direction is greater than the current
-                // max distance then this direction becomes the new farthest
+                
                 Vector3 newPosition = transform.position + new Vector3(availableDirection.x, availableDirection.y);
                 float distance = (ghost.target.position - newPosition).sqrMagnitude;
 
