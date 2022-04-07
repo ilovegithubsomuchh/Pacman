@@ -64,7 +64,7 @@ public class Movement : MonoBehaviour
 
     public bool Wall(Vector2 direction)
     {
-        // If no collider is hit then there is no obstacle in that direction
+        
         RaycastHit2D hit = Physics2D.BoxCast(transform.position, Vector2.one * 0.75f, 0f, direction, 1.5f, obstacleLayer);
         return hit.collider != null;
     }

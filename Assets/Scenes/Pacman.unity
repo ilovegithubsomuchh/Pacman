@@ -512,6 +512,9 @@ MonoBehaviour:
   gameOverText: {fileID: 1133529214}
   scoreText: {fileID: 1945791160}
   livesText: {fileID: 278868602}
+  ghostMultiplier: 0
+  score: 0
+  lives: 0
 --- !u!4 &469897152
 Transform:
   m_ObjectHideFlags: 0
@@ -10772,6 +10775,10 @@ PrefabInstance:
     - target: {fileID: 6038318316045854526, guid: b6894cca0173e8041bba0e4a8be5fde1, type: 3}
       propertyPath: m_Name
       value: Pacman
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038318316045854526, guid: b6894cca0173e8041bba0e4a8be5fde1, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6894cca0173e8041bba0e4a8be5fde1, type: 3}
